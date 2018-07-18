@@ -1,0 +1,20 @@
+1.  Install Pathogen.
+
+```
+Install to ~/.vim/autoload/pathogen.vim. Or copy and paste the following into your terminal/shell:
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+If you're using Windows, change all occurrences of ~/.vim to ~\vimfiles.
+
+```
+
+2. Create a vimrc file (Copy from this repo)
+    > In Windows create a file in c:\User\<username>\
+    > In Linux create ~/.vimrc
+
+3.  To install any new vim plugin, clone the git repo of the plugin into the ~/.vim/bundle folder.
+    > In Windows it is found in ( or need to be created in) c:/Users/<username>/vimfiles/bundle.
+
+4.  Get the following plugins -> gruvbox, nerdtree, vim-airline, vim-sensible
