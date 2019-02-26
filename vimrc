@@ -17,8 +17,8 @@ set nobackup	"Don't create stupid backup files
 set noswapfile	"Don't create swap files
 
 set background=dark
-colorscheme gruvbox    "Can be installed using pathogen
-set guifont=Fira_Mono:h10:cANSI:qDRAFT "Will need to install this font first!!
+colorscheme gruvbox
+set guifont=Fira_Mono:h10:cANSI:qDRAFT
 
 set expandtab
 set tabstop=4
@@ -44,7 +44,7 @@ nnoremap gl :ls<CR>
 nnoremap gb :ls<CR>:b
 
 " After writing a python file, call flake8 to lint the source file
-autocmd BufWritePost *.py call Flake8()
+" autocmd BufWritePost *.py call Flake8()
 
 " Relative line numbers in Normal mode, Absolute numbers in insert mode.
 :set number relativenumber
@@ -54,3 +54,11 @@ autocmd BufWritePost *.py call Flake8()
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
+
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" Autosave at cursorhold and cursor hold in insert mode
+" update interval (when no key has been pressed for update
+" internal seconds - defaults to 4000ms)
+autocmd CursorHold,CursorHoldI * update
