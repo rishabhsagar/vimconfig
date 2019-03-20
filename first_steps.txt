@@ -18,3 +18,5 @@ If you're using Windows, change all occurrences of ~/.vim to ~\vimfiles.
     > In Windows it is found in ( or need to be created in) c:/Users/<username>/vimfiles/bundle.
 
 4.  Get the following plugins -> gruvbox, nerdtree, vim-airline, vim-sensible
+
+5. :echo $MYVIMRC is the quickest way to find out the VIMRC file.  Also :e $MYVIMRC opens it up.
