@@ -62,3 +62,11 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " update interval (when no key has been pressed for update
 " internal seconds - defaults to 4000ms)
 autocmd CursorHold,CursorHoldI * update
+
+
+" Commands to automatically shift lines vertically in the editor.
+" This maps it to Shift + Up / Down arrow, this is like Sublime Text mapping
+nnoremap <S-Up> :m-2<CR>
+nnoremap <S-Down> :m+<CR>
+inoremap <S-Up> <Esc>:m-2<CR>
+inoremap <S-Down> <Esc>:m+<CR>
