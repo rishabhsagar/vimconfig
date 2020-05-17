@@ -18,6 +18,8 @@ set noswapfile	"Don't create swap files
 
 set background=dark
 colorscheme gruvbox
+
+"set guifont=Fantasque\ Sans\ Mono\:h12
 set guifont=Fira_Mono:h10:cANSI:qDRAFT
 
 set expandtab
