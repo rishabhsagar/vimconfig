@@ -19,34 +19,29 @@ set noswapfile	"Don't create swap files
 set background=dark
 colorscheme gruvbox
 
-"set guifont=Fantasque\ Sans\ Mono\:h12
-set guifont=Fira_Mono:h10:cANSI:qDRAFT
+set guifont=Fantasque\ Sans\ Mono\:h10
+"set guifont=Fira\ Code:h10
 
+"Making sure that the ligatures appear
+set renderoptions=type:directx
+set encoding=utf-8
+
+" Standard tab options
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+" Editor Options
 set number
 set showmatch
 set smarttab
 
-map <C-o> :NERDTreeToggle<CR>
+" Kill Mouse on Windows
+set mouse=c
 
-" Buffer navingation commands
-" Move to the previous buffer with gp
-nnoremap gp :bp<CR>
-
-" Move to the next buffer with gn
-nnoremap gn :bn<CR>
-
-" List all possible buffers with gl
-nnoremap gl :ls<CR>
-
-" List all possible buffers with gb and accept a new buffer argument [1]
-nnoremap gb :ls<CR>:b
-
-" After writing a python file, call flake8 to lint the source file
-" autocmd BufWritePost *.py call Flake8()
+" Nerdtree binding
+map <C-o> :NERDTreeToggle <CR>
 
 " Relative line numbers in Normal mode, Absolute numbers in insert mode.
 :set number relativenumber
@@ -56,6 +51,7 @@ nnoremap gb :ls<CR>:b
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
+
 
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
@@ -72,3 +68,24 @@ nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
+
+" Automatically make pwd= working directory
+set autochdir
+
+" For table mode plugin change the table mode corner so that github markdown
+let g:table_mode_corner='|'
+
+" Adding F4 as a shortcut to insert timestamp under cursor
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
+" This version of vim was compiled with python 3.7 dll
+" support.  Checked by `:set pythonthreedll?`
+" Resetting it to use 3.8 version since that is installed 
+" on this machine
+"set pythonthreedll=python38.dll
+"
+
+" Leader key mappings section
+nnoremap <leader>m :tabedit %<CR>
+nnoremap <leader>tc :tabclose<CR>
